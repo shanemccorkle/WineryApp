@@ -15,6 +15,7 @@ class WinesController < ApplicationController
   # GET /wines/new
   def new
     @wine = Wine.new
+    @wine.winery = Winery.find(params[:winery_id])
   end
 
   # GET /wines/1/edit
@@ -25,7 +26,7 @@ class WinesController < ApplicationController
   # POST /wines.json
   def create
     @wine = Wine.new(wine_params)
-
+    @wine.winery = Winery.find(params[:winery_id])
     respond_to do |format|
       if @wine.save
         format.html { redirect_to @wine, notice: 'Wine was successfully created.' }

@@ -24,5 +24,9 @@
     </ul>
 </p>
 
+<p>
+  <%= button_to 'Add New Wine', new_winery_wine_path(@winery), method: :get %>
+</p>
+
 <%= link_to 'Edit', edit_winery_path(@winery) %> |
 <%= link_to 'Back', wineries_path %>
