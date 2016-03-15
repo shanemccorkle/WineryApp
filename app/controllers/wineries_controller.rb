@@ -54,6 +54,8 @@ class WineriesController < ApplicationController
   # DELETE /wineries/1
   # DELETE /wineries/1.json
   def destroy
+    # Goes through and deletes all of the wines from a winery before deleting a winery
+    @winery.wines.destroy_all
     @winery.destroy
     respond_to do |format|
       format.html { redirect_to wineries_url, notice: 'Winery was successfully destroyed.' }
