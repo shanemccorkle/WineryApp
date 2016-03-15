@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @wine.name %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @wine.year %>
+</p>
+
+<p>
+  <strong>Winery:</strong>
+  <%= link_to @wine.winery.name, @wine.winery %>
+  <!-- In a link_to call, the first part is what you want to show up on the page and the second arg is what you want it to link to. -->
+</p>
+
+<%= link_to 'Edit', edit_wine_path(@wine) %> |
+<%= link_to 'Back', wines_path %>
